@@ -15,6 +15,6 @@ COPY . .
 
 EXPOSE 8000
 STOPSIGNAL SIGINT
+
 # ENTRYPOINT ["python", "manage.py"]
 # CMD ["runserver", "0.0.0.0:8000"]
-ENTRYPOINT [ "bash" ]
