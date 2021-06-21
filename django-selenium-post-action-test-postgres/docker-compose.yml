@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+    django:
+        build:
+            context: .
+        image: docker_tutorial_django
+        stdin_open: true
+        tty: true
+        ports: 
+            - 8000:8000
+        environment: 
+            - TZ=Asia/Seoul
+            - DATABASE_URL=mysql://root:mysqlroot@db:3306/db
+    
+    db:
+        image: postgres
+        ports:
+            - 5432:5432
+        environment: 
+            - TZ=Asia/Seoul
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        restart: always
+
+    chrome:
+        image: selenium/standalone-chrome
+        expose:
+            - 4444
