@@ -11,7 +11,6 @@ services:
             - 8000:8000
         environment: 
             - TZ=Asia/Seoul
-            - DATABASE_URL=mysql://root:mysqlroot@db:3306/db
         command: >
             bash -c "
             chmod +x ./wait-for-it.sh
